@@ -1,0 +1,342 @@
+/*
+Przeglądarki internetowe nadają znacznikom HTML wartości początkowe,
+które się różnią w zależności od producenta (np. Chrome, Firefox, Opera, Internet Explorer, Microsoft Edge).
+Dlatego popularną praktyką jest tworzenie tzw. resetów,
+czyli plików CSS zawierających reguły, które nadpisują te wartości,
+aby były one jednolite niezalenie od przeglądarki.
+
+Więcej na ten temat: https://cssreset.com/what-is-a-css-reset/
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	background-image: url("images/background.svg");
+	background-repeat:no-repeat;
+	background-color: #25072E;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    
+    margin: 0;
+    padding: 30px;
+    color: #EC008C;
+    font-family: "Open Sans";
+    font-size: 28px;
+    letter-spacing: 4.5px;
+    text-transform: uppercase;
+    text-align: right;
+    font-style: bold;
+    line-height: normal;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    
+}
+
+p{
+    color: #CCC8FF;
+    font-family: "Open Sans";
+    opacity: 0.5;
+    font-weight: regular;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    line-height: normal;
+}
+
+.content-section{
+    padding: 50px;
+    margin: 10px;
+    text-align: right;
+}
+
+/*
+ZAGADNIENIE PONADPROGRAMOWE
+
+Rekomendowany zestaw właściwości, które pozwalają na ukrycie tekstu w taki sposób,
+że będzie niewidoczny do standardowego użytkownika, a czytniki ekranowe wciąż będą go czytać.
+
+Więcej na ten temat: https://webaim.org/techniques/css/invisiblecontent/
+*/
+.screen-reader-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/*
+Sekcja pomocnicza, aby zwizualizować pozycje głównych bloków strony. Będzie usunięta w następnych krokach.
+*/
+.page-header {
+}
+
+.page-content {
+}
+
+.page-footer {
+}
+
+.content-section:nth-child(odd) {
+
+}
+
+.band-members{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);  
+    gap: 10 px;
+    grid-template-rows: 100vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.band-members__name, h3, .concerts__date{
+    color: #CCC8FF;
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 3.8px;
+    text-transform: uppercase;
+    text-align: left;
+    opacity: 1;
+    line-height: normal;
+}
+.band-members__desc, .concerts__location, .form__label{
+    color: #CCC8FF;
+    font-family: "Open Sans";
+    opacity: 0.5;
+    font-weight: regular;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-align: left;
+    line-height: normal;
+}
+a{
+    color: #EC008C;
+    font-family: "Open Sans";
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 6.7px;
+    text-transform: uppercase;
+    line-height: 20px;
+}
+
+.about-section__desc{
+    position: relative;
+    background-color: #25072E;
+    bottom: 200px;
+    right: 0%;
+    width: 400px;
+    padding: 30px;
+    text-align: left;
+    border-width: 0px 0px 3px 0px;
+    border-style: solid;
+    border-color:  #EC008C;
+}
+
+.content-image{
+    border-width: 3px 0px 0px 0px;
+    border-style: solid;
+    border-color:  #EC008C;
+    height: auto;
+    width: 800px;
+    text-align: right;
+} 
+
+.gallery__image{
+    border-width: 3px 0px 0px 0px;
+    border-style: solid;
+    border-color:  #EC008C;
+    height: auto;
+    width: 280px;
+}
+
+.concerts__image{
+    border-width: 0px 0px 3px 0px;
+    border-style: solid;
+    border-color:  #EC008C;
+    height: auto;
+    width: 375px;
+} 
+
+
+.concerts{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: end;
+    grid-row: 100px;
+}
+
+.concerts__item{
+    padding: 20 px;
+}
+
+.concerts__info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2, 30px);
+    padding: 0 0 10px 0;
+    text-align: left;
+}
+
+.concerts__button{
+    grid-row: span 2;
+    order: 2;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.concerts__date{
+    order: 1;
+}
+.concerts__location{
+    order: 3;
+}
+.button{
+    order: 2;
+    background-color:  rgb(204,200,255, 0.1);
+    opacity: 1;
+    color: #D8D8F8;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Open Sans";
+    font-weight: semibold;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: none;
+    padding: 7px;
+    border-radius: 6px;
+    letter-spacing: 1.5px;
+    line-height: normal;
+}
+
+.form__input{
+    background-color:  rgb(204,200,255, 0.1);
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px;
+    text-align: left;
+}
+
+iframe{
+    border-width: 3px 0px 0px 0px;
+    border-style: solid;
+    border-color:  #EC008C;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+    grid-template-rows: 3;
+    text-align: right;
+    justify-items: end;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+}
+
+.contact{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery__image__contact{
+    box-shadow: 0 px 0x 10px 10px black;
+    height: auto;
+    width: 510px;
+}
+
+address{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #CCC8FF;
+    font-family: "Open Sans";
+    opacity: 0.5;
+    font-weight: regular;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    font-style: normal;
+    padding: 30px;
+    text-align: left;
+    line-height: normal;
+}
+
+.form__field{
+    display: flex; 
+    flex-direction: column;
+    padding: 0px 0px 15px 0px;
+    align-items: flex-start;
+}
+
+/*
+Koniec sekcji pomocniczej
+*/
+
+/*
+Ustawiając sekcje nagłówka i stopki w pozycji 'fixed' sprawiamy,
+że niezależnie od pozycji paska przewijania elementy te będą znajdowały się
+w tej samej pozycji względem okna przeglądarki.
+Natomiast pozycję tę ustawiamy za pomocą parametrów 'top', 'bottom', 'right', 'left'.
+*/
+.page-header {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
+
+.page-footer {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+}
+
+/*
+Lewy margines ustawiony na kontenerze z główną zawartością strony sprawia,
+że nie będzie ona nachodzić na nagłówek i stopkę niezależnie od pozycji paska przewijania.
+Na projekcie graficznym sekcja menu ma szerokość około 170px i jest oddalona od krawędzi ekranu
+o 50px, więc można założyć, że 220px marginesu będzie wartością stosunkowo bezpieczną.
+Z kolei spady (padding) nadane na kontener wyznaczają minimalną odległość, na jaką będzie oddalona
+treść strony od otaczających ją granic kontenera (wartość "0 10%" jest
+skrótem od padding-top: 0, padding-bottom: 0, padding-left: 10%, padding-right: 10%).
+Właściwość "text-align: right" przykleja zawartość do prawej strony
+(oddziałuje na elementy, które są elementami inline'owymi, np. tekst, znaczniki <a>, <span> czy elementy z nadanym stylem "display: inline-block").
+*/
+.page-content {
+    margin-left: 220px;
+    padding: 0 10%;
+    
+}
+
+/*
+Projekt graficzny zakłada, że każda sekcja strony będzie wypełniać całą wysokość okna przeglądarki
+lub więcej, jeśli zawartość danej sekcji jest wyższa. Dlatego świetnym rozwiązaniem
+będzie użycie jednostki "vh", która oznacza 1% wysokości okna przeglądarki z właściwością "min-height",
+która wymusza wysokość elementu na zadaną wartość lub wyższą.
+*/
+.content-section {
+    min-height: 100vh;
+}
